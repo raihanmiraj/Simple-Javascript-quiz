@@ -1,0 +1,130 @@
+@import "https://unpkg.com/open-props";
+
+ 
+
+:root {
+  --ff-primary: "Rubik", sans-serif;
+  --ff-accent: "Merriweather", serif;
+
+  --clr-primary: hsl(245deg, 100%, 60%);
+  --clr-secondary: hsl(333deg, 100%, 45%);
+
+  --transition: 250ms ease-in-out;
+
+  --wrapper-max-width: 60rem;
+}
+
+/*------------------------------------*\
+  #RESET
+\*------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+  font-family: var(--ff-primary);
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-accent);
+  line-height: 1.1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+.wrapper {
+  width: min(100% - 2rem, var(--wrapper-max-width));
+  margin-inline: auto;
+}
+
+.section__title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--clr-secondary);
+}
+
+/*------------------------------------*\
+  #ARTICLE
+\*------------------------------------*/
+.articles {
+  --flow-spacer: var(--size-8); /* [2] */
+  padding-block: var(--size-8);
+  /* counter-reset: articles; */ /* [1] */
+}
+article>p{
+    margin-left: 20px
+}
+
+.article {
+  /* counter-increment: articles; */ /* [1] */
+}
+
+.article > * {
+  --flow-spacer: 1rem; /* [3] */
+}
+
+.article__title {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+/* .article__title::before { 
+  content: counter(articles, decimal-leading-zero) ". ";
+  color: var(--gray-6);
+} */ /* [1] */
+
+.article__description {
+  max-width: 70ch;
+}
+
+.article__cta {
+  position: relative;
+  display: inline-flex;
+  gap: 0.35em;
+
+  text-decoration: none;
+  font-weight: 700;
+  color: inherit;
+
+  transition: var(--transition);
+}
+
+.article__cta:is(:hover, :focus) {
+  color: var(--clr-primary);
+}
+
+.article__cta::after {
+  content: "➜";
+  color: inherit;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.article__cta:is(:hover, :focus)::after {
+  opacity: 1;
+  transform: translateX(5px);
+}

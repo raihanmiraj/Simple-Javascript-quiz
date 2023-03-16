@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Quiz Hero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        common: ["Rubik", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-white font-common">
+    <!-- Header/Navbar section start -->
+    <header class="h-16 flex items-center shadow-sm">
+        <nav class="flex justify-between items-center w-9/12 mx-auto">
+           <a href="/">
+            <div class="text-zinc-800 font-bold uppercase">
+                <h1 class="text-lg">Quiz <span class="text-green-700">HERO</span></h1>
+                <p class="text-[10px] font-normal capitalize -mt-1">
+                    Get ready to Quiz and be amazed!
+                </p>
+            </div></a>
+            <a href="blog.html" class="bg-green-600 font-light text-sm px-5 py-1 rounded text-white">
+                Blog
+            </a>
+        </nav>
+    </header>
+    <!-- Header/Navbar section end -->
+
+    <section class="articles">
+        <div class="wrapper flow">
+            <header>
+                <h2 class="section__title">Recently Writting Blog</h2>
+            </header>
+            <article class="article flow">
+                <h3 class="article__title">Difference between Map, filter, forEach and find?</h3>
+                <p class="article__description">
+                    <b>Map </b> is a function in programming that takes a sequence of data, applies a given operation or
+                    transformation to each element of the sequence, and returns a new sequence with the transformed
+                    values.<br>
+
+                    <b>Filter </b> is used to create a new array based on a specific condition. <br>
+                    <b>ForEach </b> executes a provided function once for each element in an array. <br><b>Find </b>
+                    returns the value of the first element in an array <br>
+                </p>
+
+            </article>
+
+            <article class="article flow">
+                <h3 class="article__title">Difference between localStorage, Session, Cookie?</h3>
+                <p class="article__description">
+                    <b>localStorage </b> stores data permanently<br>
+                    <b>sessionStorage </b> stores data temporarily until the browser window or tab is closed.<br>
+                    <b>Cookies </b> are small pieces of data stored by a website in a user's browser.
+                </p>
+
+            </article>
+
+            <article class="article flow">
+                <h3 class="article__title">What is event loop? how does it works?</h3>
+                <p class="article__description">
+                    <b>Event loop</b> in JavaScript is a mechanism that allows the runtime to efficiently handle
+                    asynchronous operations.<br>
+                    <b>Works: </b> It works by continuously checking the call stack and the message queue. <br>
+                    <b>Examples: </b> <br>
+                    <code><pre>
+console.log('Start');
+setTimeout(() => {
+  console.log('Timeout');
+}, 0);
+Promise.resolve().then(() => {
+  console.log('Promise');
+});
+console.log('End');</pre>
+                </code>
+                </p>
+
+            </article>
+
+            <article class="article flow">
+                <h3 class="article__title">What does QuizTimer function do?</h3>
+                <p class="article__description">
+                    It handles the time count for running Quiz.
+                    It also Handles the time a users takes to submit.
+                </p>
+
+            </article>
+
+            <article class="article flow">
+                <h3 class="article__title">What does chooseQuiz function do?</h3>
+                <p class="article__description">
+                    If a user select an option , This function handles it.
+                    like when we click on an option, it renders in Right side bar. and push the selected answer in
+                    answer array.
+                </p>
+
+            </article>
+
+        </div>
+    </section>
+</body>
+
+</html>
